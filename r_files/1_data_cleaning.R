@@ -110,6 +110,7 @@ dta <- dta %>% group_by(ecity) %>% mutate(lag14.pm25 = lag(pm25, 14))
 
 
 #### Initial Poisson Model ####
+## Note: Loop all models later
 model1 <- glm(cases ~ pm25 + as.factor(ecity) + as.factor(dow), data = dta, family = quasipoisson())
 summary(model1)
 
